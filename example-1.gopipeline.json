@@ -46,7 +46,7 @@
             }
          ],
           "properties": null
-        }.
+        },
         {
           "name": "test_job_2",
           "run_instance_count": null,
