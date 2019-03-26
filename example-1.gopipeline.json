@@ -1,0 +1,71 @@
+{
+  "format_version" : 1,
+  "label_template": "${COUNT}",
+  "enable_pipeline_locking": false,
+  "name": "new_pipeline_example",
+  "group" : "configrepo-example",
+  "tracking_tool": null,
+  "timer": null,
+  "environment_variables": [],
+  "materials": [
+    {
+      "type": "git",
+      "url": "https://github.com/NikAraga/gocd-pipeline-sample-json.git",
+      "destination": "devops",
+      "name": "git",
+      "auto_update": true,
+      "branch": "master",
+      "submodule_folder": null
+    }
+  ],
+  "stages": [
+    {
+      "name": "test_stage_1",
+      "fetch_materials": true,
+      "clean_working_directory": false,
+      "never_cleanup_artifacts": false,
+      "approval": null,
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "test_job_1",
+          "run_instance_count": null,
+          "timeout": 0,
+          "environment_variables": [],
+          "tasks": [
+            {
+              "type": "exec",
+              "run_if": "passed",
+              "command": "bash",
+			  "arguments": [
+			    "-c",
+				"printenv"
+			  ],
+              "working_directory": null
+            }
+         ],
+          "properties": null
+        },
+        {
+          "name": "test_job_2",
+          "run_instance_count": null,
+          "timeout": 0,
+          "environment_variables": [],
+          "tasks": [
+            {
+              "type": "exec",
+              "run_if": "passed",
+              "command": "bash",
+			  "arguments": [
+			    "-c",
+				"pwd"
+			  ],
+              "working_directory": null
+            }
+         ],
+          "properties": null
+        }		
+      ]
+    }
+  ]
+}
