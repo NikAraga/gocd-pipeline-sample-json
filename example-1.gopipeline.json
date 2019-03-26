@@ -36,12 +36,11 @@
             {
               "type": "exec",
               "run_if": "passed",
-              "on_cancel": {
-                "type": "exec",
-                "command": "ls",
-                "working_directory": null
-              },
-              "command": "pritenv",
+              "command": "bash",
+			  "arguments": [
+			    "-c",
+				"printenv"
+			  ],
               "working_directory": null
             }
          ],
@@ -56,12 +55,11 @@
             {
               "type": "exec",
               "run_if": "passed",
-              "on_cancel": {
-                "type": "exec",
-                "command": "ls",
-                "working_directory": null
-              },
-              "command": "pwd",
+              "command": "bash",
+			  "arguments": [
+			    "-c",
+				"pwd"
+			  ],
               "working_directory": null
             }
          ],
