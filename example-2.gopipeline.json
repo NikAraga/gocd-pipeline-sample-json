@@ -10,7 +10,7 @@
   "materials": [
     {
       "type": "git",
-      "url": "git@github.com:example/sample_repo.git",
+      "url": "https://github.com/Diabol/gocd-demo.git",
       "destination": "code",
       "filter": {
           "ignore": [
@@ -30,11 +30,7 @@
       "fetch_materials": true,
       "clean_working_directory": false,
       "never_cleanup_artifacts": false,
-      "approval": {
-        "type": "success",
-        "roles": [],
-        "users": []
-      },
+      "approval": null,
       "environment_variables": [],
       "jobs": [
         {
@@ -42,10 +38,6 @@
           "run_instance_count": null,
           "timeout": 0,
           "environment_variables": [],
-          "resources": [
-                "Linux",
-                "Java"
-          ],
           "tasks": [
             {
               "type": "exec",
@@ -62,12 +54,6 @@
               "working_directory": null
             }
          ],
-          "tabs": [
-            {
-              "name": "cobertura",
-              "path": "target/site/cobertura/*.xml"
-            }
-          ],
           "artifacts": [
             {
               "source": "target",
